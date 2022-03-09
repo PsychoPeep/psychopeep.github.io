@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Euromilhoes</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  </head>
+  <body style=" height: 100vh; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+
+    <link rel="manifest" href="/manifest.json">
+
+
+
+    <h1>Sorteio</h1>
+
+    <button style="margin-bottom: 100px;" class="btn btn-info" id="btn" type="submit">Random</button>
+
+    <h2>Números</h2>
+
+    <p id="numbers"></p>
+
+    <h2>Estrelas</h2>
+
+    <p id="stars"></p>
+
+    <script>
+      let btn = document.getElementById("btn");
+
+      let p1 = document.getElementById("numbers");
+
+      let p2 = document.getElementById("stars");
+
+      btn.addEventListener("click", function () {
+        numbers(); // APARECER NA TELA
+        starsFunc(); // APARECER NA TELA
+      });
+      function random() {}
+
+      let stars = [];
+
+      let nums = [];
+
+      function numbers() {
+        for (let i = 0; i < 5; i++) {
+          let num = Math.floor(Math.random() * (50 - 2) + 1);
+
+          let isRepeated = false;
+
+          if (nums.includes(num)) {
+            isRepeated = true;
+          }
+
+          while (isRepeated) {
+            num = Math.floor(Math.random() * (50 - 2) + 1);
+            if (!nums.includes(num)) {
+              isRepeated = false;
+            }
+          }
+
+          nums.push(num);
+        }
+        p1.innerHTML = nums;
+        nums = [];
+      }
+
+      function starsFunc() {
+        for (let i = 0; i < 2; i++) {
+          let star = Math.floor(Math.random() * (12 - 2) + 1);
+
+          let isRepeated = false;
+
+          if (stars.includes(star)) {
+            isRepeated = true;
+          }
+
+          while (isRepeated) {
+            star = Math.floor(Math.random() * (12 - 2) + 1);
+            if (!stars.includes(star)) {
+              isRepeated = false;
+            }
+          }
+
+          stars.push(star);
+        }
+        p2.innerHTML = stars;
+        stars = [];
+      }
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+{
+    "short_name": "EM",
+    "name": "Euromilhoes",
+    "icons": [
+      {
+        "src": "/icons/refresh.svg",
+        "type": "image/svg",
+        "sizes": "512x512",
+        "purpose" : "any maskable"
+      }
+    ],
+    "start_url": "Euromilhoes.html",
+    "background_color": "#3367D6",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#3367D6",
+    "shortcuts": [
+      {
+        "name": "Today's prize money",
+        "short_name": "TPM",
+        "description": "The numbers of the winning ticket",
+        "url": "/today?source=pwa"
+
+      }
+    ],
+    "description": "Win money free :)",
+    "screenshots": [
+      {
+        "src": "/images/screenshot1.png",
+        "type": "image/png",
+        "sizes": "540x720"
+      },
+      {
+        "src": "/images/screenshot2.jpg",
+        "type": "image/jpg",
+        "sizes": "540x720"
+      }
+    ]
+  }
